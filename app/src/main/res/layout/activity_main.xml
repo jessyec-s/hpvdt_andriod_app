@@ -242,7 +242,7 @@
         android:layout_marginBottom="35dp"
         android:maxLength="2"
         android:layout_marginRight="10dp"
-        android:maxLines="1" />
+        android:maxLines="1"/>
     <!--android:textSize="40sp"/> -->
     <LinearLayout
         android:layout_width="wrap_content"

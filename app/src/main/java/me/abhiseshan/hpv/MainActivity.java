@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     float currentFloatDist = 0, newFloatDist = 0;
 
-    Boolean isLandingGearOut = false;
+    //Boolean isLandingGearOut = false;
     Boolean isLeftIndicatorOn = false;
     Boolean isRightIndicatorOn = false;
     Boolean isHeadlightOn = false;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView leftArrow;
     ImageView rightArrow;
     ImageView connectionStatusIndicator;
-    ImageView landingGear;
+    //ImageView landingGear;
     ImageView headLight;
     ImageView LeftWarningSignal;
     ImageView RightWarningSignal;
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         connectionStatusIndicator.setColorFilter(getResources().getColor(R.color.blackOverlay));
         headLight.setColorFilter(getResources().getColor(R.color.blackOverlay));
         leftArrow.setColorFilter(getResources().getColor(R.color.blackOverlay));
-        landingGear.setColorFilter(getResources().getColor(R.color.blackOverlay));
+        //landingGear.setColorFilter(getResources().getColor(R.color.greenOverlay));
         rightArrow.setColorFilter(getResources().getColor(R.color.blackOverlay));
     }
 
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
         else if (status == 3) //90%
             img.setColorFilter(getResources().getColor(R.color.redOverlay));
         else
-            img.clearColorFilter(getResources().getColor(R.color.blackOverlay));
+            img.clearColorFilter();
     }
 
 
