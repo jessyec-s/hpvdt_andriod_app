@@ -1,0 +1,357 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/indicatorBar"
+        android:orientation="horizontal">
+
+        <!-- for left warning signal -->
+        <LinearLayout
+            android:layout_width="175dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/flashing_left"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/ic_lightbulb"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                android:text="Left Warning"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/connection"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/ic_connect"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                android:text="@string/connection"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/headlight"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/ic_headlight"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                android:text="@string/headlight"/>
+        </LinearLayout>
+
+        <!-- for right warning signal -->
+        <LinearLayout
+            android:layout_width="175dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/flashing_right"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/ic_lightbulb"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                android:text="Right Warning"/>
+        </LinearLayout>
+
+
+        <!--
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/landingGear"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/ic_landing_gear"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                android:text="@string/ldgear"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tireFront"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:textSize="35sp"
+                android:textColor="#FFF"
+                android:maxLines="1"
+                android:maxLength="3"
+                android:text="@string/numb_default2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:text="@string/ftTire"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:layout_marginStart="-10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tireBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:textSize="35sp"
+                android:textAlignment="viewEnd"
+                android:textColor="#FFF"
+                android:maxLines="1"
+                android:maxLength="3"
+                android:text="@string/numb_default2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:text="@string/rTire"/>
+        </LinearLayout>
+
+    -->
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/SpeedTextViewLayout"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+        <TextView
+            android:id="@+id/speedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:keepScreenOn="true"
+            android:text="@string/numb_default"
+            android:textSize="150sp"
+            android:textColor="#FFF"
+            android:maxLength="3"
+            android:maxLines="1"
+            android:textStyle="normal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-30dp"
+            android:textSize="25sp"
+            android:textColor="#FFF"
+            android:text="@string/kmph"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/SpeedTextViewLayout"
+        android:id="@+id/DistTextViewLayout"
+        android:layout_marginStart="40dp">
+        <TextView
+            android:id="@+id/DistanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:keepScreenOn="true"
+            android:text="@string/numb_default"
+            android:maxLength="3"
+            android:maxLines="1"
+            android:textSize="80sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="-13dp"
+            android:textColor="#FFF"
+            android:text="@string/dist"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/distFloatTextView"
+        android:text=".0"
+        android:textColor="#FFF"
+        android:layout_toRightOf="@id/DistTextViewLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:maxLength="2"
+        android:layout_marginRight="10dp"
+        android:maxLines="1"
+    <!--android:textSize="40sp"/> -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_toStartOf="@id/SpeedTextViewLayout"
+        android:id="@+id/cadenceTextViewLayout"
+        android:layout_marginEnd="40dp">
+        <TextView
+            android:id="@+id/CadenceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:keepScreenOn="true"
+            android:text="@string/numb_default"
+            android:textColor="#FFF"
+            android:maxLines="1"
+            android:maxLength="3"
+            android:textSize="80sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textColor="#FFF"
+            android:layout_marginTop="-13dp"
+            android:text="@string/cadence"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_leftarrow"
+        android:id="@+id/leftArrow"
+        android:layout_above="@id/cadenceTextViewLayout"
+        android:layout_toStartOf="@id/SpeedTextViewLayout"
+        android:padding="5dp"
+        android:contentDescription="@string/ctDesc"
+        android:layout_below="@id/indicatorBar"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_rightarrow"
+        android:id="@+id/rightArrow"
+        android:layout_above="@id/DistTextViewLayout"
+        android:layout_toEndOf="@id/SpeedTextViewLayout"
+        android:padding="5dp"
+        android:contentDescription="@string/ctDesc"
+        android:layout_below="@id/indicatorBar"/>
+
+</RelativeLayout>
+
+    <!--  android:textColor="#33b5e5" -->
+
+    <!--
+
+    Old turn signal implementation
+
+    <LinearLayout
+
+
+        <me.abhiseshan.hpv.GaugeView
+            android:id="@+id/gauge_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            gauge:showOuterShadow="false"
+            gauge:showOuterRim="false"
+            gauge:showInnerRim="false"
+            gauge:needleWidth="0.010"
+            gauge:needleHeight="0.40"
+            gauge:scaleStartValue="0"
+            gauge:scaleEndValue="101"
+            gauge:showNeedle="true"
+            android:layout_marginTop="30dp"
+            />
+
+                android:layout_width="110dp"
+                android:layout_height="90dp"
+                android:gravity="center"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/leftArrow"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:tint="@color/blackOverlay"
+                        android:src="@drawable/ic_arrow_left"/>
+                    <ImageView
+                        android:id="@+id/rightArrow"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:tint="@color/blackOverlay"
+                        android:src="@drawable/ic_arrow_right"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:layout_marginTop="-5dp"
+                    android:text="Turn Signals"/>
+            </LinearLayout>
+
+    -->
