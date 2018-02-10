@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
         else if (status == 3) //90%
             img.setColorFilter(getResources().getColor(R.color.redOverlay));
         else
-            img.clearColorFilter();
+            img.clearColorFilter(getResources().getColor(R.color.blackOverlay));
     }
 
 
