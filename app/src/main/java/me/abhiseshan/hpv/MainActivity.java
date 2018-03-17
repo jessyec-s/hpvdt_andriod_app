@@ -2,6 +2,7 @@ package me.abhiseshan.hpv;
 
 /*testing to see committ message */
 /*second test*/
+/*third test*/ 
 
 import android.animation.ValueAnimator;
 import android.support.annotation.NonNull;
@@ -110,11 +111,11 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
         //Setting everything to off state
-        connectionStatusIndicator.setColorFilter(getResources().getColor(R.color.blackOverlay));
-        headLight.setColorFilter(getResources().getColor(R.color.blackOverlay));
-        leftArrow.setColorFilter(getResources().getColor(R.color.blackOverlay));
-        //landingGear.setColorFilter(getResources().getColor(R.color.greenOverlay));
-        rightArrow.setColorFilter(getResources().getColor(R.color.blackOverlay));
+        //connectionStatusIndicator.setColorFilter(getResources().getColor(R.color.blackOverlay));
+        //headLight.setColorFilter(getResources().getColor(R.color.blackOverlay));
+//        leftArrow.setColorFilter(getResources().getColor(R.color.blackOverlay));
+//        //landingGear.setColorFilter(getResources().getColor(R.color.greenOverlay));
+//        rightArrow.setColorFilter(getResources().getColor(R.color.blackOverlay));
     }
 
     @SuppressWarnings("deprecation")
