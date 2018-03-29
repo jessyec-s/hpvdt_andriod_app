@@ -2,7 +2,7 @@ package me.abhiseshan.hpv;
 
 /*testing to see committ message */
 /*second test*/
-/*third test*/ 
+/*third test*/
 
 import android.animation.ValueAnimator;
 import android.support.annotation.NonNull;
@@ -28,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
     int currentSpeed = 0, newSpeed = 0;
     int currentDist = 0, newDist = 0;
     int currentCadence = 0, newCadence = 0;
-    int currentLeftWarning = 0, newLeftWarning = 0;
-    int currentRightWarning = 0, newRightWarning = 0;
+
+
+    double newLeftWarning, newRightWarning;
 
     //int currentFrontTP = 0, newFrontTP = 0;
     //int currentRearTP = 0, newRearTP = 0;
@@ -45,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
     ImageView rightArrow;
     ImageView connectionStatusIndicator;
     //ImageView landingGear;
-    ImageView headLight;
-    ImageView LeftWarningSignal;
-    ImageView RightWarningSignal;
+    //ImageView headLight;
+    ImageView LeftWarningSignal1, LeftWarningSignal2, LeftWarningSignal3, LeftWarningSignal4, LeftWarningSignal5, LeftWarningSignal6, LeftWarningSignal7, LeftWarningSignal8;
+    ImageView RightWarningSignal1, RightWarningSignal2, RightWarningSignal3, RightWarningSignal4, RightWarningSignal5, RightWarningSignal6, RightWarningSignal7, RightWarningSignal8;
 
     TextView speedTV;
     TextView distTV;
@@ -92,10 +93,26 @@ public class MainActivity extends AppCompatActivity {
         rightArrow = (ImageView) findViewById(R.id.rightArrow);
         connectionStatusIndicator = (ImageView) findViewById(R.id.connection);
         //landingGear = (ImageView) findViewById(R.id.landingGear);
-        headLight = (ImageView) findViewById(R.id.headlight);
+        //headLight = (ImageView) findViewById(R.id.headlight);
 
-        LeftWarningSignal = (ImageView) findViewById(R.id.flashing_left);
-        RightWarningSignal = (ImageView) findViewById(R.id.flashing_right);
+        LeftWarningSignal1 = (ImageView) findViewById(R.id.flashing_left1);
+        LeftWarningSignal2 = (ImageView) findViewById(R.id.flashing_left2);
+        LeftWarningSignal3 = (ImageView) findViewById(R.id.flashing_left3);
+        LeftWarningSignal4 = (ImageView) findViewById(R.id.flashing_left4);
+        LeftWarningSignal5 = (ImageView) findViewById(R.id.flashing_left5);
+        LeftWarningSignal6 = (ImageView) findViewById(R.id.flashing_left6);
+        LeftWarningSignal7 = (ImageView) findViewById(R.id.flashing_left7);
+        LeftWarningSignal8 = (ImageView) findViewById(R.id.flashing_left8);
+
+
+        RightWarningSignal1 = (ImageView) findViewById(R.id.flashing_right1);
+        RightWarningSignal2 = (ImageView) findViewById(R.id.flashing_right2);
+        RightWarningSignal3 = (ImageView) findViewById(R.id.flashing_right3);
+        RightWarningSignal4 = (ImageView) findViewById(R.id.flashing_right4);
+        RightWarningSignal5 = (ImageView) findViewById(R.id.flashing_right5);
+        RightWarningSignal6 = (ImageView) findViewById(R.id.flashing_right6);
+        RightWarningSignal7 = (ImageView) findViewById(R.id.flashing_right7);
+        RightWarningSignal8 = (ImageView) findViewById(R.id.flashing_right8);
 
         speedTV = (TextView) findViewById(R.id.speedTextView);
         distTV = (TextView) findViewById(R.id.DistanceTextView);
@@ -176,6 +193,8 @@ public class MainActivity extends AppCompatActivity {
             img.setColorFilter(getResources().getColor(R.color.orangeOverlay));
         else if (status == 3) //90%
             img.setColorFilter(getResources().getColor(R.color.redOverlay));
+        else if (status == 4) //90%
+            img.setColorFilter(getResources().getColor(R.color.blackOverlay));
         else
             img.clearColorFilter();
     }
@@ -378,10 +397,16 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("Data", data);
 
+        System.out.println("PRINTING DATA RECIEVED FROM ARDUINO");
+
+        System.out.println(data);
+
         String[] parseString = data.split("\\s*,\\s*");
 
         if (parseString.length != 8) /*changed this to 8*/
             return;
+
+
 
         Log.d("strnmg", parseString[4]);
 
@@ -389,15 +414,15 @@ public class MainActivity extends AppCompatActivity {
         newSpeed = (int)(newSpeed * 3.6); //Converting to km/h
         newDist = (int) Double.parseDouble(parseString[4]);
         newFloatDist = ((float) newDist)/1000;
-        newDist = newDist/1000; //Converting into km
+        newDist = newDist/1; //Converting into m
         newFloatDist -= newDist;
         newFloatDist *= 10; //Account for one decimal place
 
         newCadence = Integer.parseInt(parseString[5]); //changed this to 5
         //newFrontTP = Integer.parseInt(parseString[7]);
         //newRearTP = Integer.parseInt(parseString[8]);
-        newLeftWarning = Integer.parseInt(parseString[6]);
-        newRightWarning = Integer.parseInt(parseString[7]);
+        newLeftWarning = Double.parseDouble(parseString[6]);
+        newRightWarning = Double.parseDouble(parseString[7]);
 
 
         Log.d("Updating UI", parseString[0] + "," + parseString[1] + "," + parseString[2] + "," + parseString[3] + "," + parseString[4] + "," + parseString[5] + "," + parseString[6] + "," + parseString[7]);
@@ -412,43 +437,343 @@ public class MainActivity extends AppCompatActivity {
             });
         } */
 
-        if (parseString[0].equals("1") != isHeadlightOn) {
-            isHeadlightOn = parseString[0].equals("1");
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Log.d("headlight", "Changing");
-                    toggle(headLight, isHeadlightOn);
-                }
-            });
-        }
+//        if (parseString[0].equals("1") != isHeadlightOn) {
+//            isHeadlightOn = parseString[0].equals("1");
+//            runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Log.d("headlight", "Changing");
+//                    toggle(headLight, isHeadlightOn);
+//                }
+//            });
+//        }
 
         /*prototype function to control left, right warnings */
 
-        if (newLeftWarning != currentLeftWarning) {
-            currentLeftWarning = newLeftWarning;
+        /* colour schemes: 0: green, 1: yellow, 2: orange, 3: red */
+
+
+        /*GRADIENT FOR LEFT */
+
+        if (newLeftWarning < 0.125 ) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     Log.d("LeftWarning", "Changing");
-                    toggleColour(LeftWarningSignal, currentLeftWarning); //changing the left warning colour
+                    toggleColour(LeftWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(LeftWarningSignal2, 4);
+                    toggleColour(LeftWarningSignal3, 4);
+                    toggleColour(LeftWarningSignal4, 4);
+                    toggleColour(LeftWarningSignal5, 4);
+                    toggleColour(LeftWarningSignal6, 4);
+                    toggleColour(LeftWarningSignal7, 4);
+                    toggleColour(LeftWarningSignal8, 4);
                 }
             });
 
         }
 
-        if (newRightWarning != currentRightWarning) {
-            currentRightWarning = newRightWarning;
+        else if (newLeftWarning < 0.25) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     Log.d("LeftWarning", "Changing");
-                    toggleColour(RightWarningSignal, currentRightWarning); //changing the right warning colour
-
+                    toggleColour(LeftWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(LeftWarningSignal2, 0);
+                    toggleColour(LeftWarningSignal3, 4);
+                    toggleColour(LeftWarningSignal4, 4);
+                    toggleColour(LeftWarningSignal5, 4);
+                    toggleColour(LeftWarningSignal6, 4);
+                    toggleColour(LeftWarningSignal7, 4);
+                    toggleColour(LeftWarningSignal8, 4);
                 }
             });
 
         }
+
+        else if (newLeftWarning < 0.375) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(LeftWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(LeftWarningSignal2, 0);
+                    toggleColour(LeftWarningSignal3, 1);
+                    toggleColour(LeftWarningSignal4, 4);
+                    toggleColour(LeftWarningSignal5, 4);
+                    toggleColour(LeftWarningSignal6, 4);
+                    toggleColour(LeftWarningSignal7, 4);
+                    toggleColour(LeftWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newLeftWarning < 0.5) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(LeftWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(LeftWarningSignal2, 0);
+                    toggleColour(LeftWarningSignal3, 1);
+                    toggleColour(LeftWarningSignal4, 1);
+                    toggleColour(LeftWarningSignal5, 4);
+                    toggleColour(LeftWarningSignal6, 4);
+                    toggleColour(LeftWarningSignal7, 4);
+                    toggleColour(LeftWarningSignal8, 4);
+                }
+            });
+
+
+        }
+
+        else if (newLeftWarning < 0.625) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(LeftWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(LeftWarningSignal2, 0);
+                    toggleColour(LeftWarningSignal3, 1);
+                    toggleColour(LeftWarningSignal4, 1);
+                    toggleColour(LeftWarningSignal5, 2);
+                    toggleColour(LeftWarningSignal6, 4);
+                    toggleColour(LeftWarningSignal7, 4);
+                    toggleColour(LeftWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newLeftWarning < 0.750) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(LeftWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(LeftWarningSignal2, 0);
+                    toggleColour(LeftWarningSignal3, 1);
+                    toggleColour(LeftWarningSignal4, 1);
+                    toggleColour(LeftWarningSignal5, 2);
+                    toggleColour(LeftWarningSignal6, 2);
+                    toggleColour(LeftWarningSignal7, 4);
+                    toggleColour(LeftWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newLeftWarning < 0.875) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(LeftWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(LeftWarningSignal2, 0);
+                    toggleColour(LeftWarningSignal3, 1);
+                    toggleColour(LeftWarningSignal4, 1);
+                    toggleColour(LeftWarningSignal5, 2);
+                    toggleColour(LeftWarningSignal6, 2);
+                    toggleColour(LeftWarningSignal7, 3);
+                    toggleColour(LeftWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newLeftWarning > 0.875 && newLeftWarning < 1.0 ) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(LeftWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(LeftWarningSignal2, 0);
+                    toggleColour(LeftWarningSignal3, 1);
+                    toggleColour(LeftWarningSignal4, 1);
+                    toggleColour(LeftWarningSignal5, 2);
+                    toggleColour(LeftWarningSignal6, 2);
+                    toggleColour(LeftWarningSignal7, 3);
+                    toggleColour(LeftWarningSignal8, 3);
+                }
+            });
+
+        }
+
+//        if (newLeftWarning != currentLeftWarning) {
+//            currentLeftWarning = newLeftWarning;
+//            runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Log.d("LeftWarning", "Changing");
+//                    toggleColour(LeftWarningSignal1, currentLeftWarning); //changing the left warning colour
+//                }
+//            });
+//
+//        }
+
+        /*GRADIENT FOR RIGHT */
+
+        if (newRightWarning < 0.125 ) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(RightWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(RightWarningSignal2, 4);
+                    toggleColour(RightWarningSignal3, 4);
+                    toggleColour(RightWarningSignal4, 4);
+                    toggleColour(RightWarningSignal5, 4);
+                    toggleColour(RightWarningSignal6, 4);
+                    toggleColour(RightWarningSignal7, 4);
+                    toggleColour(RightWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newRightWarning < 0.25) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(RightWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(RightWarningSignal2, 0);
+                    toggleColour(RightWarningSignal3, 4);
+                    toggleColour(RightWarningSignal4, 4);
+                    toggleColour(RightWarningSignal5, 4);
+                    toggleColour(RightWarningSignal6, 4);
+                    toggleColour(RightWarningSignal7, 4);
+                    toggleColour(RightWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newRightWarning < 0.375) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(RightWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(RightWarningSignal2, 0);
+                    toggleColour(RightWarningSignal3, 1);
+                    toggleColour(RightWarningSignal4, 4);
+                    toggleColour(RightWarningSignal5, 4);
+                    toggleColour(RightWarningSignal6, 4);
+                    toggleColour(RightWarningSignal7, 4);
+                    toggleColour(RightWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newRightWarning < 0.5) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(RightWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(RightWarningSignal2, 0);
+                    toggleColour(RightWarningSignal3, 1);
+                    toggleColour(RightWarningSignal4, 1);
+                    toggleColour(RightWarningSignal5, 4);
+                    toggleColour(RightWarningSignal6, 4);
+                    toggleColour(RightWarningSignal7, 4);
+                    toggleColour(RightWarningSignal8, 4);
+                }
+            });
+
+
+        }
+
+        else if (newRightWarning < 0.625) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(RightWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(RightWarningSignal2, 0);
+                    toggleColour(RightWarningSignal3, 1);
+                    toggleColour(RightWarningSignal4, 1);
+                    toggleColour(RightWarningSignal5, 2);
+                    toggleColour(RightWarningSignal6, 4);
+                    toggleColour(RightWarningSignal7, 4);
+                    toggleColour(RightWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newRightWarning < 0.750) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(RightWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(RightWarningSignal2, 0);
+                    toggleColour(RightWarningSignal3, 1);
+                    toggleColour(RightWarningSignal4, 1);
+                    toggleColour(RightWarningSignal5, 2);
+                    toggleColour(RightWarningSignal6, 2);
+                    toggleColour(RightWarningSignal7, 4);
+                    toggleColour(RightWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newRightWarning < 0.875) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(RightWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(RightWarningSignal2, 0);
+                    toggleColour(RightWarningSignal3, 1);
+                    toggleColour(RightWarningSignal4, 1);
+                    toggleColour(RightWarningSignal5, 2);
+                    toggleColour(RightWarningSignal6, 2);
+                    toggleColour(RightWarningSignal7, 3);
+                    toggleColour(RightWarningSignal8, 4);
+                }
+            });
+
+        }
+
+        else if (newRightWarning > 0.875 && newLeftWarning < 1.0 ) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("LeftWarning", "Changing");
+                    toggleColour(RightWarningSignal1, 0); //changing the left warning colour
+                    toggleColour(RightWarningSignal2, 0);
+                    toggleColour(RightWarningSignal3, 1);
+                    toggleColour(RightWarningSignal4, 1);
+                    toggleColour(RightWarningSignal5, 2);
+                    toggleColour(RightWarningSignal6, 2);
+                    toggleColour(RightWarningSignal7, 3);
+                    toggleColour(RightWarningSignal8, 3);
+                }
+            });
+
+        }
+
+
+//        if (newRightWarning != currentRightWarning) {
+//            currentRightWarning = newRightWarning;
+//            runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Log.d("LeftWarning", "Changing");
+//                    toggleColour(RightWarningSignal1, currentRightWarning); //changing the right warning colour
+//
+//                }
+//            });
+//
+//        }
+
+
 
         if (parseString[1].equals("1") != isLeftIndicatorOn) {
             isLeftIndicatorOn = parseString[1].equals("1");

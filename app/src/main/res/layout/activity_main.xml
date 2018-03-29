@@ -14,25 +14,194 @@
         android:orientation="horizontal">
 
         <!-- for left warning signal -->
+
         <LinearLayout
-            android:layout_width="175dp"
+            android:layout_width="30dp"
             android:layout_height="90dp"
             android:gravity="center"
             android:orientation="vertical">
+
             <ImageView
-                android:id="@+id/flashing_left"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:id="@+id/flashing_left1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_margin="10dp"
                 android:contentDescription="@string/ctDesc"
-                android:src="@drawable/ic_lightbulb"/>
+                android:src="@drawable/oval" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-5dp"
                 android:textColor="#FFF"
-                android:text="Left Warning"/>
+                />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_left2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_left3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_left4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_left5"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_left6"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_left7"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_left8"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="175dp"-->
+            <!--android:layout_height="90dp"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="vertical">-->
+            <!--<ImageView-->
+                <!--android:id="@+id/flashing_left"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:contentDescription="@string/ctDesc"-->
+                <!--android:src="@drawable/ic_lightbulb"/>-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="-5dp"-->
+                <!--android:textColor="#FFF"-->
+                <!--android:text="Left Warning"/>-->
+        <!--</LinearLayout>-->
 
 
         <LinearLayout
@@ -54,46 +223,204 @@
                 android:textColor="#FFF"
                 android:text="@string/connection"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:id="@+id/headlight"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:contentDescription="@string/ctDesc"
-                android:src="@drawable/ic_headlight"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:textColor="#FFF"
-                android:text="@string/headlight"/>
-        </LinearLayout>
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="90dp"-->
+            <!--android:layout_height="90dp"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="vertical">-->
+            <!--<ImageView-->
+                <!--android:id="@+id/headlight"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:contentDescription="@string/ctDesc"-->
+                <!--android:src="@drawable/ic_headlight"/>-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="-5dp"-->
+                <!--android:textColor="#FFF"-->
+                <!--android:text="@string/headlight"/>-->
+        <!--</LinearLayout>-->
+
+
+
 
         <!-- for right warning signal -->
+
         <LinearLayout
-            android:layout_width="175dp"
+            android:layout_width="30dp"
             android:layout_height="90dp"
             android:gravity="center"
             android:orientation="vertical">
+
             <ImageView
-                android:id="@+id/flashing_right"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:id="@+id/flashing_right1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_margin="10dp"
                 android:contentDescription="@string/ctDesc"
-                android:src="@drawable/ic_lightbulb"/>
+                android:src="@drawable/oval" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-5dp"
                 android:textColor="#FFF"
-                android:text="Right Warning"/>
+                />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_right2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_right3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_right4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_right5"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_right6"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_right7"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/flashing_right8"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/ctDesc"
+                android:src="@drawable/oval" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+
+
+
 
 
         <!--
